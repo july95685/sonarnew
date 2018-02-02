@@ -1,0 +1,75 @@
+<import src="../templates/popup.wxml"/>
+<import src="../templates/list-item.wxml"/>
+<import src="../templates/loading-spinner.wxml"/>
+
+<view wx:if="{{entityDetail}}">
+  <view class='profile-header' style="background-color:{{entityDetail.themeColor}}">
+    <image src='{{entityDetail.logo}}'></image>
+  </view>
+  <view class='profile-title fa-bline'>
+    {{entityDetail.name}}
+  </view>
+
+  <view class='profile-tabs'>
+    <!--class='{{tabIsFixed ? "fixed" : ""}}'-->
+    <view>
+      <view 
+      data-index='0' 
+      bindtap='switchTab' 
+      hover-class='hover-opacity' 
+      class='{{tabIndex == 0 ? "active" : ""}}'>案例</view>
+      <view 
+      data-index='1' 
+      bindtap='switchTab' 
+      class='{{tabIndex == 1 ? "active" : ""}}'
+      hover-class='hover-opacity'>{{entityType === 'brand' ? "KOL" : "品牌"}}</view>
+    </view>
+  </view>
+
+  <!-- 案例列表  -->
+  <block wx:if="{{tabIndex == 0}}">
+    <block wx:for="{{caseList}}" wx:for-index="key" wx:key="{{key}}">
+        <template is="listItem" data="{{...item}}"></template>
+    </block>
+
+    <block wx:if="{{loadingCaseList}}">
+      <template is="loadingSpinner"></template>
+    </block>
+
+  </block>
+
+  <!-- 品牌或KOL列表  -->
+  <view class='fa-mt10' wx:if="{{tabIndex == 1}}">
+    <block wx:for="{{entityList}}" wx:key="{{index}}">
+      <template is="simpleCard" data="{{...item}}"></template>
+    </block>
+
+    <block wx:if="{{loadingEntityList}}">
+      <template is="loadingSpinner"></template>
+    </block>
+  
+  </view> 
+
+  <template is="popup" data="{{showPopup, popupTop}}"></template>
+
+</view>
+
+<template name="simpleCard">
+  <view class='simple-card fa-bline' data-id="{{id}}" bindtap='enterEntity' hover-class='hover-opacity'>
+    <image src='{{logo}}'></image>
+    <view>
+      <view class='simple-card__title bt-1line'><text>{{name}}</text></view>
+      <view class='simple-card__subtitle bt-1line'><text>{{latestPost}}</text></view>
+      <view class='simple-card__tags'>
+        <block wx:for="{{tags}}" wx:key="{{index}}">
+          <view class='tag-item'>
+            <text wx:if="{{item.icon}}" class='{{item.icon}}'></text>
+            <text>{{item.text}}</text>
+          </view>
+        </block>
+        
+        
+      </view>
+    </view>
+  </view>
+</template>

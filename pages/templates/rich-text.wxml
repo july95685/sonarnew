@@ -1,0 +1,16 @@
+<template name="richText">
+  <block wx:for="{{richText}}" wx:key="{{index}}">
+    <block wx:if="{{item.node === 'text'}}">
+      <text>{{item.text}}</text>
+    </block>
+    <block wx:if="{{item.node === 'topic'}}">
+      <text class='fa-blue'>#{{item.text}}#</text>
+    </block>
+    <block wx:if="{{item.node === 'at'}}">
+        <text class='fa-blue'>{{item.text}}</text>
+      </block>
+    <block wx:if="{{item.node === 'emoji'}}">
+        <image class='emoji-desc' src='{{item.src}}'></image>
+    </block>
+  </block>
+</template>

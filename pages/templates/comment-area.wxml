@@ -1,0 +1,71 @@
+<import src="./loading-spinner.wxml"/>
+<import src="./rich-text.wxml"/>
+
+<template name="commentArea">
+  <view class='comment-area fa-mt10'>
+    <view class='comment-header fa-bline'>
+      <view class='comment-header__group'>
+        <view class='comment-header__item' wx:if="{{postType === 'weibo' || postType === 'zhihu'}}">赞 {{likesCount}}</view>
+        <view class='comment-header__item active'>评论 {{comments.length}}</view>
+      </view>
+      <view class='comment-header__group'>
+        <view class='comment-header__item' wx:if="{{postType === 'weibo'}}">转发 {{repostsCount}}</view>
+      </view>
+    </view>
+    
+    <view class='comment-body'>
+      
+      <block wx:for="{{comments}}" wx:key="{{index}}">
+        <template is="commentItem" data="{{...item}}"></template>
+      </block>
+
+      <view wx:if="{{comments.length && postType === 'wechat'}}" class='comment-hint'>
+        <text>以上留言由公众号筛选后显示</text>
+      </view>
+
+      <block wx:if="{{loading}}">
+        <template is="loadingSpinner"></template>
+      </block>
+
+      
+    </view>
+
+  </view>
+</template>
+
+<template name="commentItem">
+     <view class='comment-item fa-bline'>
+        <image src='{{logoUrl}}' class='comment-item__avatar'></image>
+        <view class='comment-item__con'>
+          <view class='comment-item__header'>
+            <text class='comment-item__title'>{{nickName}}</text>
+            <view class='comment-item__like'><text class='icon-zan'></text><text>{{likeNum}}</text></view>
+          </view>
+          <view class='comment-item__time'>{{timeStr}}</view>
+          <view class='comment-item__desc'>
+              <template is="richText" data="{{richText: richContent}}"></template>
+          </view>
+          <!-- <view class='comment-item__expand touchable-opacity'>共xx条回复</view>
+
+          <view class='reply-body'>
+             <template is="replyItem"></template>
+             <template is="replyItem"></template>
+          </view> -->
+        </view>
+      </view>
+</template>
+
+<template name="replyItem">
+  <view class='comment-item comment-item--reply'>
+        <view class='comment-item__line'></view>
+        <view class='comment-item__con'>
+          <view class='comment-item__header'>
+            <text class='comment-item__title'>作者回复</text>
+            <view class='comment-item__like'><text class='icon-zan'></text><text>1285</text></view>
+          </view>
+          <view class='comment-item__desc'>
+              dalao 讲的很平实易懂，很赞啊。提个比较虚的问题：用户界面看起来不是技术难度很高的东西，那么前端的价值体现在哪呢？
+          </view>
+        </view>
+      </view>
+</template>

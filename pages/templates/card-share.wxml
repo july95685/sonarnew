@@ -1,0 +1,9 @@
+<template name="cardShare">
+  <view class="card-share">
+    <view class='touchable-opacity'>
+      <text class='icon-share-white'></text>
+      <text>分享给朋友</text>
+      <button open-type="share"></button>
+    </view>
+  </view>
+</template>

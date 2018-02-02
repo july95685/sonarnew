@@ -1,0 +1,154 @@
+<import src="../templates/list-item.wxml"/>
+
+<view>
+
+  <view class='learn-title fa-mt30 fa-plr15'><text>更懂内容营销</text></view>
+  <view class='learn-subtitle fa-mt20 fa-plr15'><text>Brandtail （品牌尾巴）追踪收录超过4,000个品牌、90,000条品牌内容、40,000个 KOL。我们为品牌内容营销提供洞察力，灵感和智慧。</text></view>
+
+  <image class='logos-img fa-mt30' mode='widthFix' src='../../image/logos.png'></image>
+
+
+
+  <view class='learn-title fa-mt30 fa-plr15'><text>跨渠道</text></view>
+  <view class='learn-title fa-plr15'><text>探索精彩的内容创意</text></view>
+  <view class='fa-plr15 fa-mt30'>
+    <view class='fa-tab'>
+      <view data-key="{{1}}" bindtap='switchTwoTab' class='fa-tab__item touchable-opacity {{twoTabIndex == 1 ? "active":""}}'>图文</view>
+      <view data-key="{{2}}" bindtap='switchTwoTab' class='fa-tab__item touchable-opacity {{twoTabIndex == 2 ? "active":""}}'>问答</view>
+      <view data-key="{{3}}" bindtap='switchTwoTab' class='fa-tab__item touchable-opacity {{twoTabIndex == 3 ? "active":""}}'>视频</view>
+    </view>
+  </view>
+
+  <view class='fa-mt30'>
+    <block wx:if="{{twoTabIndex === 1}}">
+      <swiper 
+      bindchange="swiperChange" 
+      data-field="1"
+      class='listitem-swiper' 
+      indicator-dots="{{false}}"
+      autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
+        <block wx:for="{{pictexts}}" wx:key="{{index}}"> 
+          <swiper-item>
+            <template is="listItem" data="{{...item,disableHover: true,disableMore: true, titleClass:'bt-1line', descClass:'bt-1line'}}"></template>
+          </swiper-item>
+        </block> 
+      </swiper>
+
+      <view class='swiper-indicator'>
+        <view class='{{swiperIndex[1] == 0 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[1] == 1 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[1] == 2 ? "active" : ""}}'></view>
+      </view>
+
+    </block>
+    <block wx:if="{{twoTabIndex === 2}}">
+
+      <swiper 
+      bindchange="swiperChange" 
+      data-field="2"
+      class='listitem-swiper' indicator-dots="{{false}}"
+      autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
+        <block wx:for="{{qas}}" wx:key="{{index}}"> 
+          <swiper-item>
+            <template is="listItem" data="{{...item,fromTitle:'知乎', fromUrl:'../../image/zhihu-logo.png',disableHover: true,disableMore: true}}"></template>
+          </swiper-item>
+        </block> 
+      </swiper>
+
+      <view class='swiper-indicator'>
+        <view class='{{swiperIndex[2] == 0 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[2] == 1 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[2] == 2 ? "active" : ""}}'></view>
+      </view>
+
+    </block>
+    <block wx:if="{{twoTabIndex === 3}}">
+
+      <swiper 
+      bindchange="swiperChange" 
+      data-field="3"
+      class='listitem-swiper' indicator-dots="{{false}}"
+      autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
+        <block wx:for="{{videos}}" wx:key="{{index}}"> 
+          <swiper-item>
+            <template is="listItem" data="{{...item,fromTitle:'美拍', fromUrl:'../../image/meipai-logo.png',disableHover: true,disableMore: true}}"></template>
+          </swiper-item>
+        </block> 
+      </swiper>
+
+      <view class='swiper-indicator'>
+        <view class='{{swiperIndex[3] == 0 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[3] == 1 ? "active" : ""}}'></view>
+        <view class='{{swiperIndex[3] == 2 ? "active" : ""}}'></view>
+      </view>
+
+    </block>
+  </view>
+
+
+  <view class='learn-title fa-mt50 fa-plr15'><text>实时洞察</text></view>
+  <view class='learn-title fa-plr15'><text>内容营销的创意与效果</text></view>
+  <view class='fa-plr15 fa-mt30'>
+    <view class='fa-tab'>
+      <view data-key="{{1}}" bindtap='switchOneTab' class='fa-tab__item touchable-opacity {{oneTabIndex == 1 ? "active":""}}'>数据</view>
+      <view data-key="{{2}}" bindtap='switchOneTab' class='fa-tab__item touchable-opacity {{oneTabIndex == 2 ? "active":""}}'>受众</view>
+      <view data-key="{{3}}" bindtap='switchOneTab' class='fa-tab__item touchable-opacity {{oneTabIndex == 3 ? "active":""}}'>竞品</view>
+    </view>
+  </view>
+
+  <view class='learn-insight fa-plr15 fa-mt20'>
+    <block wx:if="{{oneTabIndex === 1}}">
+      <image mode='aspectFill' src='../../image/card-1.png'></image>
+      <view class='learn-insight__desc'>
+        <text>数据洞察</text>
+        <view>我们对每个 Campaign 进行监测与分析，包括触达、评论数、点赞数、转发数等，所有数据可做到分钟级更新，实时检索。</view>
+      </view>
+    </block>
+    <block wx:if="{{oneTabIndex === 2}}">
+      <image mode='widthFix' src='../../image/card-2.png'></image>
+        <view class='learn-insight__desc'>
+        <text>受众洞察</text>
+        <view>我们对每个 Campaign 受众数据进行分析，通过多维度对受众数据进行结构化，超过100个标签对每个用户进行精准画像。</view>
+      </view>
+    </block>
+    <block wx:if="{{oneTabIndex === 3}}">
+      <image mode='widthFix' src='../../image/card-3.png'></image>
+        <view class='learn-insight__desc'>
+        <text>竞品洞察</text>
+        <view>实时洞察竞品在内容营销中的策略、创意以及效果，甚至细分到月度、季度、年度的策略与成本分析。</view>
+      </view>
+    </block>
+  </view>
+
+
+
+  <view class='learn-title fa-mt50 fa-plr15'><text>关于营销与数据</text></view>
+  <view class='learn-title fa-plr15'><text>我们还提供这些服务</text></view>
+
+  <view class='fa-plr15 fa-mt20'>
+    <scroll-view scroll-x class='learn-scroll'>
+      <view class='card-wrapper'>
+        <block wx:for="{{services}}" wx:key="{{index}}">
+          <template is="serviceCard" data="{{...item}}"></template>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+  <button class='contact-btn fa-mt40' open-type="contact">联系我们</button>
+
+  <view class='fa-h40'></view>
+</view>
+
+
+<template name="serviceCard">
+  <view class='service-card'>
+    <view class='service-card__top'>
+      <image src='{{icon}}'></image>
+      <text>{{title}}</text>
+    </view>
+    <view class='service-card__desc'>
+      <text>{{desc}}</text>
+    </view>
+  </view>
+</template>

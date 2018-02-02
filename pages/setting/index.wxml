@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view>
+  <view class="setting-header">
+    设置
+  </view>
+  <view class="setting-main">
+    <view class="content-wrap" bindtap='moveToApplication'>
+        <view class="content">
+            <image src="../../image/wechat-logo.png"></image>
+            <text style="margin-right:350rpx;">可关注品牌数</text>
+            <text>12</text>
+        </view>
+    </view>
+    <view class="content-wrap  content-border">
+        <view class="content">
+            <image src="../../image/wechat-logo.png"></image>
+            <text>在线客服</text>
+        </view>
+    </view>
+    <view class="content-wrap">
+        <view class="content">
+            <image src="../../image/wechat-logo.png"></image>
+            <text>把 Sonar 推荐给朋友</text>
+            <button open-type="share"></button>
+        </view>
+    </view>
+  </view>
+</view>

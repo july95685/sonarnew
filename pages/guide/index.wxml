@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<import src="../templates/switch.wxml" />
+<view>
+   <view class="guide-header">
+     全部品牌
+   </view>
+    <!--<view class="guide-info">
+     <text class="info">至少选择1个你想关注的品牌</text>
+     <text class="next">下一步</text>
+   </view> -->
+   <view wx:for="{{guideArray}}" wx:for-index="index" wx:key="{{key}}">
+      <view class="space" wx:if="{{index}}"></view>
+      <view class="guide-content" >
+         <view class="title">
+            {{item.title}}
+         </view>
+         <view class="guide" wx:for="{{item.data}}" wx:for-index="key" wx:key="{{key}}">
+            <view class="guide-image">
+                <image src="{{item.image}}"></image>
+            </view>
+            <view class="guide-main">
+                <view class="guide-text">
+                    <view class="text-title">{{item.title}}</view>
+                    <view class="text-content">{{item.text}}</view>
+                </view>
+                <view class="guide-switch">
+                  <view class="switch-container">
+                      <template is="switch" data-id="{{item.id}}" data="{{isOn: item.switch,id: item.id}}"/>
+                  </view>
+                </view>
+            </view>
+         </view>
+        <view class="more" bindtap='getMore'>
+              查看更多品牌{{index}}
+        </view>
+     </view>
+  </view>
+  <view class="tips" wx:if="{{showTips}}" bindtap='closeTips'>
+      <view class="tips-content" catchtap='weixinShow'>
+          <view class="tips-mian">
+              <text>解锁新品牌</text>
+              <!-- <text class="tips-num">254</text>
+              <text style="cgba(0,0,0,0.84);font-size:24rpx; text-align:center;">条新信息</text>-->
+          </view>
+          <view class="success-btn">
+             <button class="btn-index" catchtap='weixinPay'>微信支付 ¥ {{tipsData.num}}</button>
+             <button class="btn-application" catchtap='freePay'>免费解锁</button>
+          </view>
+          <view class="tip-text">
+            分享给朋友或朋友群，朋友通过你的分享加入Sonar，你将免费解锁该品牌，你的朋友同时也会增加一个品牌关注名额
+          </view>
+      </view>
+  </view>
+</view>

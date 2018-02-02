@@ -1,0 +1,38 @@
+/**index.wxss**/
+.success-header{
+    font-size:56rpx;
+    color:rgba(0,0,0,0.84);
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:30rpx;
+    font-weight:bold;
+}
+.success-info{
+    font-size:32rpx;
+    color:rgba(0,0,0,0.34);
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:30rpx;
+    font-weight:bold;
+}
+.success-btn{
+    padding-left:30rpx;
+    padding-right:30rpx;
+    border-radius:8rpx;
+    margin-top:426rpx;
+}
+.success-btn .btn-index{
+    background-color:rgb(16,142,233);
+    font-size:32rpx;
+    line-height:90rpx;
+    color:#fff;
+    font-weight:bold;
+}
+.success-btn .btn-application{
+    background-color:rgb(244,244,244);
+    font-size:32rpx;
+    line-height:90rpx;
+    color:rgba(0,0,0,0.34);
+    font-weight:bold;
+    margin-top:30rpx;
+}

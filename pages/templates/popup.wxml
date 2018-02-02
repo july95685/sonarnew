@@ -1,0 +1,17 @@
+<template name="popup">
+  <view class='popup {{showPopup ? "show" : ""}}'>
+    <view bindtouchstart='closePopup' class='popup-mask'></view>
+    <view style='top:{{popupTop}}' class='popup-con'>
+      <text class='icon-arrow'></text>
+      <view class='touchable-opacity'>
+        <button open-type="share" bindtap='shareLink'></button>
+        <text class='icon-share'></text>
+        <text>分享给朋友</text>
+      </view>
+      <view bindtap='copyLink' class='touchable-opacity'>
+        <text class='icon-link'></text>
+        <text>复制链接</text>
+      </view>
+    </view>
+  </view>
+</template>

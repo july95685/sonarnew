@@ -1,0 +1,65 @@
+<template name="cardMarker">
+  <view wx:if="{{!grid}}" class='card-marker'>
+
+    <view wx:if="{{repostsCount}}">
+      <text class='icon-eye'></text>
+      <text>转发</text>
+      <text class='text-blue'>{{repostsCount}}</text>
+    </view>
+
+    <view wx:if="{{viewsCount}}">
+      <text class='icon-eye'></text>
+      <text>阅读</text>
+      <text class='text-blue'>{{viewsCount}}</text>
+    </view>
+
+    <view>
+      <text class='icon-zan'></text>
+      <text>点赞</text>
+      <text class='text-blue'>{{likesCount}}</text>
+    </view>
+    <view>
+        <text class='icon-comment'></text>
+      <text>评论</text>
+      <text class='text-blue'>{{commentsCount}}</text>
+    </view>
+    <view>
+        <text class='icon-clock'></text>
+      <text>时间</text>
+      <text class='text-blue'>{{time}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{grid}}" class='card-marker2 fa-mt10'>
+    <view class='card-marker2__header'>数据</view>
+    <view class='card-marker2__body'>
+      
+      <view wx:if="{{repostsCount}}">
+        <text>{{repostsCount}}</text>
+        <text>转发</text>
+      </view>
+
+      <view wx:if="{{viewsCount || postType == 'zhihu'}}">
+        <text>{{viewsCount ? viewsCount : '---'}}</text>
+        <text>阅读</text>
+      </view>
+
+      <view wx:if="{{likesCount}}">
+        <text>{{likesCount}}</text>
+        <text>点赞</text>
+      </view>
+      <view wx:if="{{commentsCount}}">
+       <text>{{commentsCount}}</text>
+        <text>评论</text>
+      </view>
+      <view wx:if="{{dateString}}">
+       <text>{{dateString}}</text>
+        <text>时间</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+</template>

@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<import src="../templates/switch.wxml" />
+<view>
+   <view class="choose-header">
+     选择品牌
+   </view>
+   <view class="choose-info">
+        你已经关注的品牌
+   </view>
+   <view class="choose-content" wx:for="{{chooseArray}}" wx:for-index="key" wx:key="{{key}}" bindtap='entereFeed'>
+     <view class="choose">
+        <view class="choose-image">
+            <image src="{{item.image}}"></image>
+        </view>
+        <view class="choose-main">
+            <view class="choose-text">
+                <view class="text-title">{{item.title}}</view>
+                <view class="text-content">{{item.text}}</view>
+            </view>
+        </view>
+     </view>
+   </view>
+</view>

@@ -1,0 +1,21 @@
+<view wx:if="{{caseDetail.title}}">
+
+  <view class='article-con'>
+
+    <view class='article-title'>
+      <text>{{caseDetail.title}}</text>
+    </view>
+    <view class='article-intro'>
+      <text>{{caseDetail.account.name}} · {{caseDetail.timeString}}</text>
+    </view>
+
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:articleContent.nodes}}"/>
+  </view>
+
+  <import src="../templates/card-marker.wxml"/>
+  <template is="cardMarker" data="{{...caseDetail.stats, time: caseDetail.timeString}}"/>
+
+  <import src="../templates/card-share.wxml"/>
+  <template is="cardShare"/>
+</view>

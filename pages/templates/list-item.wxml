@@ -1,0 +1,75 @@
+<import src="./rich-text.wxml"/>
+
+<!-- 内容块模板 -->
+<template name="listItem">
+  <view
+    data-id="{{id}}"
+    bindtap='enterDetail'
+    hover-class='{{disableHover ? "" : "hover-opacity"}}'
+    class='list-item'>
+    <view class='list-item__header'>
+      <view class='list-item__from'>
+        <image mode='aspectFill' src='{{fromUrl}}'></image>
+        <text>{{fromTitle}}</text>
+      </view>
+      <view wx:if="{{!disableMore}}" catch:tap='openMoreAction' data-id='{{id}}' id='list-item-{{id}}' class='list-item__more' hover-class='hover-opacity' hover-stop-propagation='{{true}}'>
+        <text class='icon-more'></text>
+      </view>
+    </view>
+
+    <view class='list-item__thumb {{weiboClass}}'>
+      <image mode="aspectFill" src='{{cover}}'></image>
+    </view>
+
+    <view class='list-item__body'>
+
+      <view class='list-item__brandgroup'>
+        <image mode="aspectFit" src='{{brand.logo}}'></image>
+        <text class='icon-plus'></text>
+        <image mode="aspectFit" src='{{account.logo}}'></image>
+      </view>
+
+      <view class='list-item__time'>
+        <text>发布日期：{{timeString}}</text>
+      </view>
+
+      <view wx:if="{{title && postType !== 'weibo'}}" class='list-item__title {{titleClass}}'>
+        <text>{{title}}</text>
+      </view>
+
+      <view wx:if="{{parsedDesc}}" class='list-item__desc {{descClass}}'>
+          <template is="richText" data="{{richText:parsedDesc}}"></template>
+      </view>
+
+    </view>
+    <view class='list-item__footer'>
+
+      <text class='icon-trend'></text>
+
+      <view wx:if="{{stats.playsCount}}" class='marker-item'>
+        <text>播放</text>
+        <text class='text-blue bt-ml6'>{{stats.playsCount}}</text>
+      </view>
+
+      <view wx:if="{{stats.repostsCount}}" class='marker-item'>
+        <text>转发</text>
+        <text class='text-blue bt-ml6'>{{stats.repostsCount}}</text>
+      </view>
+
+      <view wx:if="{{stats.viewsCount}}" class='marker-item'>
+        <text>阅读</text>
+        <text class='text-blue bt-ml6'>{{stats.viewsCount}}</text>
+      </view>
+
+      <view wx:if="{{stats.likesCount}}" class='marker-item'>
+        <text>赞</text>
+        <text class='text-blue bt-ml6'>{{stats.likesCount}}</text>
+      </view>
+
+      <view wx:if="{{stats.commentsCount}}" class='marker-item'>
+        <text>评论</text>
+        <text class='text-blue bt-ml6'>{{stats.commentsCount}}</text>
+      </view>
+    </view>
+  </view>
+</template>

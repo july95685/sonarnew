@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view>
+   <view class="application-header">
+      申请新的品牌
+   </view>
+   <view class="application-info">
+     申请添加新品牌的费用为
+     <text>￥299</text>
+   </view>
+   <view class="form">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+       <view class="section">
+         <input name="company" placeholder-class="phcolor" placeholder="公司名称" />
+       </view>
+       <view class="section">
+        <input name="brand" placeholder-class="phcolor" placeholder="品牌名称：如 特斯拉" />
+       </view>
+       <view class="section">
+        <input name="otherbrand" placeholder-class="phcolor" placeholder="品牌别名：如 " />
+       </view>
+       <view class="section">
+           <input name="email" placeholder-class="phcolor" placeholder="联系邮箱" />
+         </view>
+         <view class="section">
+          <input name="phoneNum" placeholder-class="phcolor" placeholder="手机号码" />
+         </view>
+         <view class="subimt-btn">
+             <button formType="submit">提交</button>
+         </view>
+    </form>
+   </view>
+</view>

@@ -1,0 +1,60 @@
+/**index.wxss**/
+@import "../templates/switch.wxss";
+.choose-header{
+    font-size:56rpx;
+    color:rgba(0,0,0,0.84);
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:30rpx;
+    font-weight:bold;
+}
+.choose-info{
+    height:108rpx;
+    font-size:32rpx;
+    color:rgba(0,0,0,0.34);
+    font-weight:bold;
+    line-height:88rpx;
+    display:flex;
+    justify-content:space-between;
+    padding: 0 30rpx;
+}
+.choose-content .title{
+    font-size:28rpx;
+    height:88rpx;
+    line-height:88rpx;
+    color:rgb(17,83,160);
+    font-weight:bold;
+    margin-left:30rpx;
+    border-bottom:1px solid rgb(244,244,244);
+}
+.choose-content .choose{
+    display:flex;
+    justify-content:space-between;
+    padding-top:30rpx;
+    padding-left:30rpx;
+}
+.choose-image image{
+    width:68rpx;
+    height:68rpx;
+    margin-right:30rpx;
+}
+.choose-main{
+   border-bottom:1px solid rgb(244,244,244);
+   padding-bottom:30rpx;
+   padding-right:30rpx;
+   display:flex;
+   justify-content:space-between;
+}
+.choose-main .choose-text{
+    display:flex;
+    flex-direction:column;
+}
+.choose-text .text-title{
+    font-size:32rpx;
+    color:rgba(0,0,0,0.84);
+    font-weight:bold;
+}
+.choose-text .text-content{
+    font-size:26rpx;
+    color:rgba(0,0,0,0.54);
+}

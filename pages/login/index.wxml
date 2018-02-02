@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view>
+   <view class="login-header">
+     登录
+   </view>
+   <view class="login-info">
+        登录查看内容详情和数据分析
+   </view>
+   <view class="login-main">
+        <view class="login-content">
+            <image src="../../image/sonar-test.png"></image>
+            <view class="login-contentInfo">
+                <text class="login-title">VIPKID</text>
+                <text class="login-text">7648条信息</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="login-content">
+            <image src="../../image/sonar-test.png"></image>
+            <view class="login-contentInfo">
+                <text class="login-title">特斯拉</text>
+                <text class="login-text">7648条信息</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="login-content">
+            <image src="../../image/sonar-test.png"></image>
+            <view class="login-contentInfo">
+                <text class="login-title">星巴克</text>
+                <text class="login-text">7648条信息</text>
+            </view>
+        </view>
+   </view>
+   <view class="loginBtn-content">
+       <button class="login-btn" bindtap="login" data-id="1">微信快捷登录</button>
+   </view>
+</view>

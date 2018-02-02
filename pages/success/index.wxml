@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view>
+      <view class="success-header">
+          支付
+        </view>
+        <view class="success-info">
+         我们会在一个工作日内通过邮箱回复通知您结果
+        </view>
+      <view class="success-btn">
+           <button class="btn-index" bindtap='moveToFeed'>返回首页</button>
+           <button class="btn-application" bindtap='moveToApplication'>继续申请</button>
+      </view>
+</view>

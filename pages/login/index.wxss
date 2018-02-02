@@ -1,0 +1,68 @@
+/**index.wxss**/
+.login-header{
+    font-size:56rpx;
+    color:rgba(0,0,0,0.84);
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:30rpx;
+    font-weight:bold;
+}
+.login-info{
+    height:60rpx;
+    font-size:30rpx;
+    color:rgba(0,0,0,0.84);
+    font-weight:bold;
+    line-height:88rpx;
+    display:flex;
+    justify-content:space-between;
+    padding: 0 30rpx;
+    margin-bottom:60rpx;
+}
+.login-content{
+    margin:30rpx;
+    display:flex;
+}
+.login-content image{
+    height:120rpx;
+    width:120rpx;
+    margin-right:30rpx;
+}
+.login-contentInfo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.login-contentInfo .login-title{
+     color:rgba(0,0,0,0.84);
+     font-size:34rpx;
+}
+.login-contentInfo .login-text{
+    margin-top:10rpx;
+    color:rgba(0,0,0,0.34);
+    font-size:24rpx;
+}
+.line{
+    height:1px;
+    width:100%;
+    border-top:1px solid rgb(244,244,244);
+}
+.loginBtn-content{
+    position:fixed;
+    bottom:30rpx;
+    right:0;
+    left:0;
+}
+.login-text{
+    font-size:28rpx;
+    color:rgba(0,0,0,0.84);
+    text-align:center;
+    height:40rpx;
+    line-height:40rpx;
+}
+.login-btn{
+    margin:140rpx 30rpx 0 30rpx;
+    background-color:rgb(68,183,83);
+    color:#fff;
+    font-size:32rpx;
+    height:88rpx;
+}

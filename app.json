@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/feed/index",
+    "pages/setting/index",
+
+    "pages/index/index",
+
+    "pages/guide/index",
+    "pages/choose/index",
+
+    "pages/login/index",
+
+
+    "pages/sonar/index",
+    "pages/application/index",
+    "pages/success/index",
+    "pages/category/index",
+    "pages/detail/index",
+    "pages/article/index",
+    "pages/profile/index",
+    "pages/learn/index",
+    "pages/list/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Brandtail",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#F4F4F4"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle":"#000000",
+    "selectedColor":"#108EE9",
+    "color":"#C2C2C2",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "image/icon-list.png",
+      "selectedIconPath": "image/icon-list-fill.png"
+    },{
+      "pagePath": "pages/category/index",
+      "text": "分类",
+      "iconPath": "image/icon-category.png",
+      "selectedIconPath": "image/icon-category-fill.png"
+    }]
+  }
+}

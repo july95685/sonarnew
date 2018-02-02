@@ -1,0 +1,12 @@
+<template name="cardZhihu">
+  <view class='card-zhihu' bindtap='enterArticle' hover-class='hover-opacity'>
+    <image mode='aspectFill' class='card-zhihu__thumb' src='{{cover}}'></image>
+    <view class='card-zhihu__title fa-plr15 fa-mt10'>{{title}}</view>
+    <view class='card-zhihu__subtitle fa-plr15 fa-mt5 bt-2line'>
+      {{article}}
+    </view>
+    <view class='card-zhihu__seemore fa-mt10'>
+      查看全文
+    </view>
+  </view>
+</template>

@@ -1,0 +1,38 @@
+.card-zhihu{
+  background-color: white;
+  font-size: 0;
+}
+.card-zhihu__thumb{
+  height: 360rpx;
+  width: 100%;
+}
+.card-zhihu__title{
+  font-size: 36rpx;
+	line-height: 1.56;
+	color: #000000;
+}
+.card-zhihu__subtitle{
+  font-size: 26rpx;
+	line-height: 1.69;
+	color: rgba(0, 0, 0, 0.54);
+}
+.card-zhihu__seemore{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+	font-weight: 500;
+	color: #108ee9;
+  position: relative;
+}
+.card-zhihu__seemore::before{
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #e8e8e8;
+  top: 0;
+  left: 30rpx;
+  right: 0;
+  position: absolute;
+  transform: scaleY(0.5);
+}

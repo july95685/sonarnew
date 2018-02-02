@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<import src="../templates/popup.wxml"/>
+<import src="../templates/list-item.wxml"/>
+<import src="../templates/loading-spinner.wxml"/>
+
+<view>
+  <template is="topCard"></template>
+
+  <view class='{{filterKey !== null ? "" : ""}}'>
+    <block wx:for="{{caseList}}" wx:for-index="key" wx:key="{{key}}">
+      <template is="listItem" data="{{...item}}"></template>
+    </block>
+  </view>
+
+  <block wx:if="{{isLoading}}">
+    <template is="loadingSpinner"></template>
+  </block>
+  
+  <template is="popup" data="{{showPopup, popupTop}}"></template>
+
+</view>
+
+
+
+<!-- 筛选列表模板  -->
+<template name="picTextItem">
+  <view 
+    data-type="{{type}}" 
+    data-id="{{id}}" 
+    bindtap="selectItem" 
+    class="touchable-opacity pictext-item {{active ? 'active' : ''}}">
+    <view>
+      <block wx:if="{{img}}">
+        <image src="{{img}}"></image>
+      </block>
+      <text> {{title}} </text>
+    </view>
+    <text class="icon-check {{active ? 'show' : ''}}"></text>
+  </view>
+</template>
+
+
+<template name="topCard">
+  <view bindtap='enterLearn' hover-class='hover-opacity' class='top-card'>
+    <view class='top-card__title'><view>品牌尾巴</view></view>
+    <view class='top-card__subtitle'>我们追踪收录超过4,000个品牌、90,000条品牌内容、40,000个 KOL。我们为品牌内容营销提供洞察力，灵感和智慧。</view>
+    <view class='top-card__btn'>了解更多</view>
+    <image class='top-card__img' src='../../image/top-card-img@2x.png'></image>
+  </view>
+</template>

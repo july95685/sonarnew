@@ -1,0 +1,152 @@
+<!--index.wxml-->
+<view>
+  <view class="feed-headerContainer">
+    <view class="feed-header"  bindtap='moveToChoose'>
+        <view class="header-left">
+            <view class="header-image">
+                <image src="../../image/wechat-logo.png"></image>
+            </view>
+            <view class="header-fill">
+            </view>
+        </view>
+        <view class="header-content">
+            <text>阿迪达斯</text>
+            <text class='icon-down'></text>
+        </view>
+        <view class="header-right"></view>
+    </view>
+    <view class="feed-headerIcon">
+         <view class="tool-setup" bindtap='moveToSetting'>
+             <text class='icon-setup icon'></text>
+         </view>
+         <view class="tool-add" bindtap='moveToGuide'>
+              <text class='icon-add icon'></text>
+         </view>
+    </view>
+  </view>
+  <view class="feedOrData">
+    <view wx:if="{{isFeed}}"  bindtap='entereFeed'>动态</view>
+    <view bindtap='entereFeed' class="gruyColor" wx:else>动态</view>
+    <view wx:if="{{isFeed}}"  class="gruyColor" style="margin-left:60rpx;" bindtap='enterData'>数据</view>
+    <view bindtap='enterData' style="margin-left:60rpx;"  wx:else>数据</view>
+  </view>
+
+  <!-- <view class="feed-toolbar">
+    <view class="tool-content">
+           <view class="tool-choose" bindtap='entereFeed' wx:if="{{isFeed}}">
+              <text class='icon-share icon'></text>
+           </view>
+           <view bindtap='entereFeed' wx:else>
+               <text class='icon-share icon'></text>
+           </view>
+           <view style="margin-left:80rpx;" bindtap='enterData' wx:if="{{isFeed}}">
+              <text class='icon-share icon'></text>
+           </view>
+           <view wx:else style="margin-left:80rpx;" bindtap='enterData' class="tool-choose">
+              <text class='icon-share icon'></text>
+           </view>
+    </view>
+    <view class="tool-add" bindtap='moveToGuide'>
+         <text class='icon-share icon'></text>
+    </view>
+  </view>-->
+  <view wx:if="{{isFeed}}">
+      <view class="feed-container" wx:for="{{feedArray}}" wx:for-index="key" wx:key="{{key}}">
+        <view class="container-image">
+            <image src="{{item.image}}"></image>
+            <view wx:if="{{item.isponit}}" class="blue-point"></view>
+        </view>
+        <view class="container-main">
+            <view class="main-from">
+                <text class="main-tag">{{item.tag}}</text>
+                <text class="main-time">{{item.time}}</text>
+            </view>
+            <view class="main-title">
+                <text>{{item.name}}</text>
+            </view>
+            <view class="main-content">
+                <text>{{item.text}}</text>
+            </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+        <view class="data-scope">
+            <text>日期范围</text>
+            <view class="data-rectangle" style="margin:0 30rpx;" wx:if="{{isWeek}}" bindtap='dataToWeek'>
+                <view class="rect-left-select rect-choose"></view>
+                <view class="rect-middle-select rect-choose">近7天</view>
+                <view class="rect-right-select rect-choose"></view>
+            </view>
+            <view class="data-rectangle" style="margin:0 30rpx;" wx:else bindtap='dataToWeek'>
+                <view class="rect-left-unselect rect-unchoose"></view>
+                <view class="rect-middle-unselect rect-unchoose">近7天</view>
+                <view class="rect-right-unselect rect-unchoose"></view>
+            </view>
+            <view class="data-rectangle" wx:if="{{isWeek}}" bindtap='dataToMonth'>
+                <view class="rect-left-un rect-choose"></view>
+                <view class="rect-middle-un rect-choose">近30天</view>
+                <view class="rect-right-un rect-choose"></view>
+            </view>
+             <view class="data-rectangle" wx:else bindtap='dataToMonth'>
+                <view class="rect-left rect-unchoose"></view>
+                <view class="rect-middle rect-unchoose">近30天</view>
+                <view class="rect-right rect-unchoose"></view>
+            </view>
+        </view>
+        <view class="space"></view>
+        <view>
+           <view class="data-title">声量数据</view>
+           <view class="data-totle">9,864</view>
+        </view>
+        <view class="space"></view>
+        <view class="chart-title">声量数据</view>
+        <view style="width:100%;height:370rpx;margin-bottom:30rpx;">
+             <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+        </view>
+        <view class="space"></view>
+        <view class="chart-title">声量来源</view>
+        <view style="width:100%;height:{{soundData}}rpx;margin-bottom:30rpx;" class="chart-row">
+             <canvas canvas-id="soundSourceCanvas" class="canvas"></canvas>
+        </view>
+        <view class="space"></view>
+        <view class="chart-title">用户分布</view>
+        <view style="width:100%;height:220rpx;">
+             <canvas canvas-id="userDistributionCanvas" class="canvas"></canvas>
+        </view>
+        <view class="space"></view>
+        <view class="chart-title">用户使用终端与机型</view>
+        <view  style="width:100%;height:360rpx;margin-bottom:30rpx;">
+             <canvas canvas-id="userInfoCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+        </view>
+        <view class="chart-group">
+            <view  style="width:50%;height:320rpx;">
+                 <canvas canvas-id="userInfoRingCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+            </view>
+            <view class="ring-info">
+                <view class="ringInfo-show">
+                    <view class="ringInfo-top"><view></view><text>男 4 20.0%</text></view>
+                    <view class="ringInfo-bottom"><view></view><text>女 16 80.0%</text></view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!-- <view class="tips" wx:if="{{showTip}}">
+        <view class="tips-content">
+            <view class="tips-mian">
+                <text style="cgba(0,0,0,0.84);font-size:32rpx; text-align:center;">你关注的品牌有</text>
+                <text class="tips-num">254</text>
+                <text style="cgba(0,0,0,0.84);font-size:24rpx; text-align:center;">条新信息</text>
+            </view>
+            <view class="tips-move" bindtap='closeTip'>去看看</view>
+        </view>
+    </view>-->
+    <view class="tips-v2" wx:if="{{showTip}}">
+        <view class="tips-v2-text">
+            3,766 条新信息
+        </view>
+    </view>
+</view>
+
+

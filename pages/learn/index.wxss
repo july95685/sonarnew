@@ -1,0 +1,120 @@
+/* pages/learn/index.wxss */
+.listitem-swiper{
+  height: 750rpx;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.listitem-swiper .list-item{
+  margin-top: 0;
+}
+.listitem-swiper .list-item__footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.listitem-swiper .list-item__body{
+  padding-bottom: 20rpx;
+}
+.list-item__time{
+  text-align: right;
+  margin-bottom: 34rpx;
+}
+
+.logos-img{
+  width: 100%;
+}
+.learn-title{
+  font-size: 48rpx;
+  line-height: 1.4;
+}
+.learn-subtitle{
+  font-size: 28rpx;
+	line-height: 1.7;
+}
+.contact-btn{
+  	width: 690rpx;
+	height: 80rpx;
+	border-radius: 4rpx;
+	background-color: #108ee9;
+  color: white;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.learn-scroll{
+  width: 100%;
+  height: 462rpx;
+}
+.card-wrapper{
+  width: 1932rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 6rpx;
+}
+.service-card{
+  height: 450rpx;
+  width: 450rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  border-radius: 4rpx;
+	background-color: #ffffff;
+	box-shadow: 0 2rpx 6rpx 0 rgba(0, 0, 0, 0.2);
+  font-size: 28rpx;
+}
+.service-card__top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.service-card__top image{
+  width: 84rpx;
+	height: 84rpx;
+}
+.service-card__top text{
+  
+  margin-left: 20rpx;
+}
+.service-card__desc{
+  margin-top: 30rpx;
+	line-height: 1.7;
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.learn-insight image{
+  width: 100%;
+  height: 420rpx !important;
+}
+.learn-insight__desc text{
+  font-size: 40rpx;
+	font-weight: 500;
+	line-height: 2.5;
+  color: rgba(0, 0, 0, 0.84);
+}
+.learn-insight__desc view{
+  font-size: 28rpx;
+	line-height: 1.7;
+	color: rgba(0, 0, 0, 0.84);
+}
+
+.swiper-indicator{
+  width: 88rpx;
+  height: 16rpx;
+  position: relative;
+  left: 50%;
+  margin-left: -44rpx;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.swiper-indicator view{
+  display: flex;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 8rpx;
+  background-color: rgba(0, 0, 0, 0.24);
+}
+.swiper-indicator view.active{
+  background-color: #108ee9;
+}

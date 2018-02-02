@@ -1,0 +1,77 @@
+<import src="./rich-text.wxml"/>
+
+<template name="cardWeibo">
+  <view class='card-wb fa-pt15'>
+    <view class='card-wb__profile fa-plr15'>
+      <image class='card-wb__avatar' src='{{account.logo}}'></image>
+      <view class='card-wb__info'>
+        <view class='card-wb__title fa-truncate'>{{account.name}}</view>
+        <view class='card-wb__from fa-truncate'>{{weiboFrom}}</view>
+      </view>
+    </view>
+
+    <view class='card-wb__txt fa-mt10 fa-pb15 fa-plr15 FC_00084'>
+      <template is="richText" data="{{richText:parsedDesc}}"></template>
+    </view>
+
+    <!-- 多图 fa-mt10-->
+    <view wx:if="{{isImageType}}" class='fa-pb15 fa-plr15'>
+
+      <view class="weibo-singleimg" wx:if="{{images.length == 1}}">
+          <image bindtap="previewWeiboImage" data-source="{{images[0]}}" mode="aspectFill" src="{{images[0]}}"></image>
+      </view>
+
+      <view class="weibo-mutilimg" wx:if="{{images.length > 1}}">
+        <block wx:for="{{images}}" wx:key="{{index}}">
+            <image bindtap="previewWeiboImage" data-source="{{item}}" mode="aspectFill" src="{{item}}"></image>
+        </block>
+      </view>
+
+      
+
+      <!-- <view class='card-wb__imgs'>
+        <swiper 
+        bindchange="swiperChange"
+        class='cwis-swiper'
+        indicator-dots="{{false}}"
+        autoplay="{{false}}" interval="{{5000}}" duration="{{1000}}">
+            <block wx:for="{{images}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class='cwis-indicator fa-mt15'>
+          <block wx:for="{{images}}" wx:key="{{index}}">
+              <view class='{{currentIndex == index ? "active" : ""}}'></view>
+          </block>
+        </view>
+        <view class='cwis-pager'>
+          {{currentIndex + 1}}/{{images.length}}
+        </view>
+      </view> -->
+    </view>
+
+    <!-- 长文 -->
+     <!-- <view class='fa-pb15 fa-plr15 fa-mt10'>
+      <view class='card-wb__article' bindtap='enterArticle' hover-class='hover-opacity'>
+        <image mode='aspectFill' src='{{cover}}'></image>
+        <view>当铲屎的脑洞大开给奶汪做了个小背篓，这一家三口出游的画风不要太可爱啊</view>
+      </view>
+    </view>  -->
+
+    <!-- 回复 -->
+    <!-- <view class='card-wb__repost'>
+      <view class='card-wb__txt FC_00084'>
+        @野生救援WildAid：GOblue向蓝是我们低碳的脚步，更是生活态度。慢跑、骑行、滑板、步行穿过城市的喧嚣与宁静。在过程中寻找乐趣，探索新的故事，对周围的事物保持一份好奇。#922世界无车日# 跟随野生救援GOblue向蓝公益大使@Dear-迪丽热巴 @张彬彬Vin 一同感受城市别样风景，享受蓝天，选择无车出行，#我看城市不一样# @微公益 @星光公益联盟
+      </view>
+      <view class='card-wb__video'>
+        
+      </view>
+    </view> -->
+    <view class="weibo-video-wrap" wx:if="{{isVideoType}}">
+        <video class="weibo-video" src="{{video}}" controls></video>        
+    </view>
+
+  </view>
+</template>

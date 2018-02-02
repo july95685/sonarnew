@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<import src="../templates/popup.wxml"/>
+<import src="../templates/list-item.wxml"/>
+<import src="../templates/loading-spinner.wxml"/>
+
+<view>
+
+  
+  <view>
+    <block wx:for="{{caseList}}" wx:for-index="key" wx:key="{{key}}">
+      <template is="listItem" data="{{...item}}"></template>
+    </block>
+  </view>
+
+  <block wx:if="{{isLoading}}">
+    <template is="loadingSpinner"></template>
+  </block>
+  
+  <template is="popup" data="{{showPopup, popupTop}}"></template>
+
+</view>

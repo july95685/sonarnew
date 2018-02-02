@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<import src="../templates/switch.wxml" />
+<view>
+   <view class="sonar-header">
+     Sonar
+   </view>
+   <view class="sonar-info">
+        选择你想关注的品牌
+   </view>
+   <view class="sonar-content">
+        <view class="image-list">
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image" style="margin:0 30rpx;">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+        </view>
+        <view class="image-list">
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image" style="margin:0 30rpx;">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+        </view>
+         <view class="image-list">
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image" style="margin:0 30rpx;">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow shadow-hide">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+            <view class="sonar-image">
+                <image src="../../image/sonar-test.png"></image>
+                <view class="sonar-shadow">
+                    <text class='icon icon-choosed'></text>
+                </view>
+                <view>特斯拉</view>
+            </view>
+        </view>
+   </view>
+   <view class="success-btn">
+      <button class="btn-index" >下一步</button>
+    </view>
+</view>

@@ -1,0 +1,138 @@
+/**index.wxss**/
+@import "../templates/switch.wxss";
+.guide-header{
+    font-size:56rpx;
+    color:rgba(0,0,0,0.84);
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:30rpx;
+    font-weight:bold;
+}
+.guide-info{
+    height:88rpx;
+    line-height:88rpx;
+    box-shadow: 0 1rpx 0 0 rgb(232,232,232);
+    display:flex;
+    justify-content:space-between;
+    padding: 0 30rpx;
+}
+.guide-info .info{
+    font-size:32rpx;
+    color:rgba(0,0,0,0.84);
+}
+.guide-info .next{
+    font-size:32rpx;
+    color:rgba(0,0,0,0.34);
+}
+.space{
+    height:20rpx;
+    width:100%;
+    background-color:rgb(232,232,232);
+}
+.guide-content .title{
+    font-size:28rpx;
+    height:88rpx;
+    line-height:88rpx;
+    color:rgba(0,0,0,0.84);
+    font-weight:bold;
+    margin-left:30rpx;
+    border-bottom:1px solid rgb(244,244,244);
+}
+.guide-content .guide{
+    display:flex;
+    justify-content:space-between;
+    padding-top:30rpx;
+    padding-left:30rpx;
+}
+.guide-image image{
+    width:68rpx;
+    height:68rpx;
+    margin-right:30rpx;
+}
+.guide-main{
+   border-bottom:1px solid rgb(244,244,244);
+   padding-bottom:30rpx;
+   padding-right:30rpx;
+   display:flex;
+   width:100%;
+   justify-content:space-between;
+}
+.guide-main .guide-text{
+    display:flex;
+    flex-direction:column;
+    margin-right:60rpx;
+}
+.guide-text .text-title{
+    font-size:32rpx;
+    color:rgba(0,0,0,0.84);
+    font-weight:bold;
+}
+.guide-text .text-content{
+    font-size:26rpx;
+    color:rgba(0,0,0,0.54);
+}
+.more{
+    color:rgb(16,142,233);
+    height:88rpx;
+    line-height:88rpx;
+    font-size:26rpx;
+    margin-left:128rpx;
+}
+.tips{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.54);
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+    justify-content:center
+}
+.tips-content{
+    width:86%;
+    background:#fff;
+    margin:0 auto;
+    height:560rpx;
+}
+.tips-mian{
+    width:100%;
+    height:60rpx;
+    line-height:60rpx;
+    display:flex;
+    margin:60rpx 0;
+    font-weight:bold;
+    justify-content:center;
+    color:rgba(0,0,0,0.54);
+    font-size:36rpx;
+    text-align:center;
+}
+.success-btn{
+    padding-left:30rpx;
+    padding-right:30rpx;
+    border-radius:8rpx;
+}
+.success-btn .btn-index{
+    background-color:rgb(68,183,83);
+    font-size:32rpx;
+    line-height:90rpx;
+    color:#fff;
+    font-weight:bold;
+}
+.success-btn .btn-application{
+    background-color:rgb(244,244,244);
+    font-size:32rpx;
+    line-height:90rpx;
+    color:rgba(0,0,0,0.54);
+    font-weight:bold;
+    margin-top:30rpx;
+}
+.tip-text{
+    font-size:26rpx;
+    color:rgba(0,0,0,0.34);
+    margin:30rpx 50rpx;
+    text-align:center;
+    font-weight:bold;
+    line-height:40rpx;
+}

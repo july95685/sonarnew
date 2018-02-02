@@ -1,0 +1,49 @@
+<import src="../templates/loading-spinner.wxml"/>
+
+<view>
+    <view class="tabs">
+        <view data-key="0" hover-class='hover-opacity' bindtap="switchTab" class="tab-item {{currentTab == 0 ? 'active':''}}">行业</view>
+        <view data-key="1" hover-class='hover-opacity' bindtap="switchTab" class="tab-item {{currentTab == 1 ? 'active':''}}">品牌</view>
+        <view data-key="2" hover-class='hover-opacity' bindtap="switchTab" class="tab-item {{currentTab == 2 ? 'active':''}}">KOL</view>
+    </view>
+
+    <view class="scroll-wrap">
+            <scroll-view class="scroll-container {{currentTab == 0 ? '':'hide'}}" scroll-y>
+                    <block wx:for="{{industryList}}" wx:key="{{index}}">
+                        <view class="row-item" bindtap="enterDetail" data-type="industry" data-title="{{item.name}}" data-id="{{item.id}}" hover-class='hover-opacity'>
+                            <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                            <text>{{item.name}}</text>
+                        </view>
+                    </block>
+                    <block wx:if="{{isLoadingIndustry}}">
+                        <template is="loadingSpinner"></template>
+                    </block>
+            </scroll-view>
+        
+            <scroll-view bindscrolltolower="brandOnReachBottom" lower-threshold="200" class="scroll-container {{currentTab == 1 ? '':'hide'}}" scroll-y>
+                <block wx:for="{{brandList}}" wx:key="{{index}}">
+                        <view class="row-item" bindtap="enterDetail" data-type="brand" data-title="{{item.name}}" data-id="{{item.id}}" hover-class='hover-opacity'>
+                            <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                            <text>{{item.name}}</text>
+                        </view>
+                </block>
+                <view wx:if="{{isLoadingBrand}}" class="loading-spinner-wrap">
+                        <template is="loadingSpinner"></template>
+                </view>
+            </scroll-view>
+            
+            <scroll-view bindscrolltolower="accountOnReachBottom" lower-threshold="200" class="scroll-container {{currentTab == 2 ? '':'hide'}}" scroll-y>
+                    <block wx:for="{{accountList}}" wx:key="{{index}}">
+                            <view bindtap="enterDetail" data-type="account" data-title="{{item.name}}" data-id="{{item.id}}" class="row-item" hover-class='hover-opacity'>
+                                <image wx:if="{{item.logo}}" src="{{item.logo}}"></image>
+                                <text>{{item.name}}</text>
+                            </view>
+                    </block>
+                    <block wx:if="{{isLoadingAccount}}">
+                        <template is="loadingSpinner"></template>
+                    </block>
+            </scroll-view>
+    </view>
+
+    
+</view>

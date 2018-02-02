@@ -1,0 +1,82 @@
+<!-- 模版引入 -->
+<import src="../templates/card-marker.wxml"/>
+<import src="../templates/comment-area.wxml"/>
+<import src="../templates/card-share.wxml"/>
+<import src="../templates/zhihu-card.wxml"/>
+<import src="../templates/weibo-card.wxml"/>
+
+
+<view wx:if="{{caseDetail.title}}">
+
+  <!-- 知乎显示 -->
+  <block wx:if="{{caseDetail.postType === 'zhihu'}}">
+      <template is='cardZhihu' data="{{...caseDetail}}"></template>
+  </block>
+
+  <!-- 微博显示  -->
+  <block wx:if="{{caseDetail.postType === 'weibo'}}">
+    <template is='cardWeibo' data="{{...caseDetail, currentIndex:currentIndex}}"></template> 
+  </block>
+   
+
+  <!-- 微信显示 -->
+  <view wx:if="{{caseDetail.postType === 'wechat'}}" class='card-intro' hover-class='hover-opacity' bindtap='enterArticle'>
+    <view class='card-intro__title'>{{caseDetail.title}}</view>
+    <view class='card-intro__thumb'>
+      <image mode="aspectFill" src='{{caseDetail.cover}}'></image>
+    </view>
+    <view class='card-intro__subtitle'>
+      <text class='bt-2line'>{{caseDetail.summary}}</text>
+    </view>
+    <view class='card-intro__seemore'>
+      <text>查看全文</text>
+    </view>
+  </view>
+
+  <view class='card-brand'>
+    <view hover-class='hover-opacity' bindtap='enterBrand' class='card-brand__item'>
+      <image mode="aspectFit" src="{{caseDetail.brand.logo}}"></image>
+      <text>{{caseDetail.brand.name}}</text>
+    </view>
+    <text class='icon-plus-bold'></text>
+    <view hover-class='hover-opacity' bindtap='enterAccount' class='card-brand__item'>
+      <image mode="aspectFit" src="{{caseDetail.account.logo}}"></image>
+      <text>{{caseDetail.account.name}}</text>
+    </view>
+  </view>
+
+  <template is="cardMarker" data="{{...caseDetail.stats,dateString: caseDetail.dateString, time: caseDetail.timeString, grid: true, postType: caseDetail.postType}}"/>
+
+  <!-- <template is="cardWechat" data="{{...caseDetail.account,qrcode:caseDetail.qrcode}}"></template> -->
+
+  <template is="commentArea" data="{{comments:caseComments, loading: loadingComment, ...caseDetail.stats, postType: caseDetail.postType}}"></template>
+
+  <template is="cardShare"></template>
+
+
+</view>
+
+<template name="cardWechat">
+  <view class='card-wechat'>
+    <view class='card-wechat__header'>
+      <view class='card-wechat__header-left'>
+        <image src='{{logo}}'></image>
+        <view>
+          <text>{{name}}</text>
+          <text>微信号：{{key}}</text>
+        </view>
+      </view>
+      <image data-source="{{qrcode}}" bindtap='previewQrCode' src='{{qrcode}}'></image>
+    </view>
+    <view class='card-wechat__body'>
+      <view>
+        <view><text>功能介绍：</text></view>
+        <view><text>{{about}}</text></view>
+      </view> 
+        <view>
+        <view><text>帐号主体：</text></view>
+        <view><text>{{verifiedInfo && verifiedInfo[0]}}</text></view>
+      </view>      
+    </view>
+  </view>
+</template>

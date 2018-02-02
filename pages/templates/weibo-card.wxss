@@ -1,0 +1,129 @@
+.card-wb__avatar{
+  width: 94rpx;
+	height: 94rpx;
+  border-radius: 47rpx;
+  background-color: red;
+}
+.card-wb__profile{
+   display: flex;
+   flex-direction: row;
+   flex-shrink: 0;
+}
+.card-wb__info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20rpx;
+  width: 0;
+  flex: 1;
+}
+
+.card-wb{
+  background-color: white;
+}
+.card-wb__title{
+	font-size: 28rpx;
+	font-weight: 500;
+	color: #000000;
+}
+.card-wb__from{
+	font-size: 24rpx;
+	color: rgba(0, 0, 0, 0.54);
+  margin-top: 10rpx;
+}
+.card-wb__txt{
+  /* 16px */
+  font-size: 32rpx; 
+	line-height: 1.71;
+}
+.card-wb__repost{
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  margin-top: 20rpx;
+}
+
+.card-wb__imgs{
+  position: relative;
+}
+.cwis-swiper image{
+  height: 750rpx;
+  width: 100%;
+}
+.cwis-swiper{
+  height: 750rpx;
+}
+.cwis-pager{
+  position: absolute;
+  width: 120rpx;
+	height: 60rpx;
+	border-radius: 30rpx;
+	background-color: rgba(0, 0, 0, 0.54);
+  	font-size: 28rpx;
+	font-weight: 500;
+  line-height: 60rpx;
+  text-align: center;
+	color: #ffffff;
+  top: 30rpx;
+  right: 30rpx;
+}
+.cwis-indicator{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cwis-indicator view{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 8rpx;
+  background-color: rgba(0, 0, 0, 0.24);
+  margin: 0 10rpx;
+}
+.cwis-indicator view.active{
+  background-color: #108ee9;
+}
+.card-wb__article{
+	background-color: #ffffff;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.card-wb__article image{
+  width: 100%;
+  height: 360rpx;
+  background-color: red;
+}
+.card-wb__article view{
+	font-size: 36rpx;
+	color: #000000;
+  padding: 30rpx;
+}
+.weibo-video{
+  width: 100%;
+  height: 480rpx;
+}
+.weibo-video-wrap{
+  font-size: 0;
+}
+.weibo-singleimg{
+  height: 690rpx;
+  font-size: 0;
+}
+.weibo-singleimg image{
+  width: 100%;
+  height: 100%;
+}
+.weibo-mutilimg{
+  font-size: 0;
+}
+.weibo-mutilimg image{
+  width: 227rpx;
+  height: 227rpx;
+  margin-right: 6rpx;
+  margin-top: 6rpx;
+}
+.weibo-mutilimg image:nth-child(1),
+.weibo-mutilimg image:nth-child(2),
+.weibo-mutilimg image:nth-child(3){
+  margin-top: 0;
+}
+.weibo-mutilimg image:nth-child(3n){
+  margin-right: 0;
+}

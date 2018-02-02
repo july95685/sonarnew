@@ -1,0 +1,93 @@
+.card-marker{
+  font-size:28rpx;
+  color: #999999;
+  padding: 20rpx 30rpx;
+  background-color: white;
+}
+.card-marker .icon-eye,
+.card-marker .icon-zan,
+.card-marker .icon-comment,
+.card-marker .icon-clock{
+  width: 30rpx;
+  height: 30rpx;
+}
+.card-marker > view{
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+.card-marker > view text{
+  margin-right: 18rpx;
+}
+
+.card-marker2{
+  background-color: white;
+}
+.card-marker2__header{
+  height: 88rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.84);
+  padding-left: 30rpx;
+  line-height: 88rpx;
+}
+.card-marker2__body{
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;      */
+width: 100%;
+}
+.card-marker2__body::after{
+  content: "";
+  display: block;
+  clear: both;
+  
+}
+.card-marker2__body > view{
+  height: 148rpx;
+  width: 50%;
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 30rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  float: left;
+}
+.card-marker2__body > view::before{
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #e8e8e8;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transform: scaleY(0.5);
+}
+.card-marker2__body > view::after{
+  content: "";
+  display: block;
+  width: 1px;
+  background-color: #e8e8e8;
+  top: 0;
+  bottom: 0;
+  right:0;
+  position: absolute;
+  transform: scaleX(0.5);
+}
+.card-marker2__body > view:nth-child(2n)::after{
+  display: none;
+}
+.card-marker2__body > view text:first-child{
+  height: 70rpx;
+  font-size: 60rpx;
+  color: rgba(0, 0, 0, 0.84);
+  line-height: 70rpx;
+}
+.card-marker2__body > view text:last-child{
+  color: rgba(0, 0, 0, 0.54);
+  height: 36rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  text-indent: 4rpx;
+}
